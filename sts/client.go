@@ -3,7 +3,7 @@ package sts
 import (
 	"os"
 
-	"github.com/howardshaw/qcloudapi-sdk-go/common"
+	"github.com/xawei/qcloudapi-sdk-go/common"
 )
 
 const (

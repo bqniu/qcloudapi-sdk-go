@@ -17,8 +17,8 @@ package main
 import (
 	"log"
 
-	"github.com/howardshaw/qcloudapi-sdk-go/clb"
-	"github.com/howardshaw/qcloudapi-sdk-go/common"
+	"github.com/xawei/qcloudapi-sdk-go/clb"
+	"github.com/xawei/qcloudapi-sdk-go/common"
 )
 
 func main() {

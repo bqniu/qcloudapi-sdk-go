@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/howardshaw/qcloudapi-sdk-go/cvm"
+	"github.com/xawei/qcloudapi-sdk-go/cvm"
 )
 
 func TestLoadBalanceBackends(t *testing.T) {
