@@ -3,6 +3,7 @@ package common
 import (
 	"crypto/hmac"
 	"crypto/sha256"
+	"crypto/tls"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -81,8 +82,10 @@ func NewClient(credential CredentialInterface, opts Opts) (*Client, error) {
 	if opts.Logger == nil {
 		opts.Logger = logrus.New()
 	}
+	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
 	return &Client{
 		&http.Client{
+			Transport: tr,
 			Timeout: time.Second * 60,
 		},
 		credential,
