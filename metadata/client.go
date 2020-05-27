@@ -8,6 +8,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 	"time"
 
@@ -138,7 +139,11 @@ func (m *MetaDataClient) Url() (string, error) {
 	if m.resource == "" {
 		return "", errors.New("the resource you want to visit must not be nil!")
 	}
-	return fmt.Sprintf("%s/%s", ENDPOINT, m.resource), nil
+	realEndPoint := os.Getenv("TCE_METADATA_URL")
+	if realEndPoint == "" {
+		realEndPoint = ENDPOINT
+	}
+	return fmt.Sprintf("%s/%s", realEndPoint, m.resource), nil
 }
 
 func (m *MetaDataClient) send() (string, error) {
