@@ -189,9 +189,9 @@ func (client *Client) InvokeWithGET(action string, args interface{}, response in
 		return makeClientError(err)
 	}
 
-	client.opts.Logger.WithField("Action", action).Infof(
-		"%s %s %d %s", "GET", req.URL, resp.StatusCode, body,
-	)
+	//client.opts.Logger.WithField("Action", action).Infof(
+	//	"%s %s %d %s", "GET", req.URL, resp.StatusCode, body,
+	//)
 
 	legacyErrorResponse := LegacyAPIError{}
 
